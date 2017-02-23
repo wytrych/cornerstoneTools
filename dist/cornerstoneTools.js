@@ -1,7 +1,11 @@
-/*! cornerstoneTools - v0.8.3 - 2017-02-21 | (c) 2014 Chris Hafey | https://github.com/chafey/cornerstoneTools */
+/*! cornerstoneTools - v0.8.3 - 2017-02-23 | (c) 2014 Chris Hafey | https://github.com/chafey/cornerstoneTools */
 // Begin Source: src/header.js
 if (typeof cornerstone === 'undefined') {
     cornerstone = {};
+}
+
+if (typeof cornerstoneMath === 'undefined') {
+    cornerstoneMath = {};
 }
 
 if (typeof dicomParser === 'undefined') {
@@ -5690,9 +5694,9 @@ if (typeof cornerstoneTools === 'undefined') {
                 if (data.handles.textBox.hasMoved) {
                     // Draw dashed link line between tool and text
                     var link = {
-                start: {},
-                end: {}
-            };
+                        start: {},
+                        end: {}
+                    };
 
                     link.end.x = textCoords.x;
                     link.end.y = textCoords.y;
@@ -5701,22 +5705,22 @@ if (typeof cornerstoneTools === 'undefined') {
 
                     var boundingBoxPoints = [
               {
-                  // Top middle point of bounding box
-                  x: boundingBox.left + boundingBox.width / 2,
-                  y: boundingBox.top
-              }, {
-                  // Left middle point of bounding box
-                  x: boundingBox.left,
-                  y: boundingBox.top + boundingBox.height / 2
-              }, {
-                  // Bottom middle point of bounding box
-                  x: boundingBox.left + boundingBox.width / 2,
-                  y: boundingBox.top + boundingBox.height
-              }, {
-                  // Right middle point of bounding box
-                  x: boundingBox.left + boundingBox.width,
-                  y: boundingBox.top + boundingBox.height / 2
-              },
+                        // Top middle point of bounding box
+                        x: boundingBox.left + boundingBox.width / 2,
+                        y: boundingBox.top
+                    }, {
+                        // Left middle point of bounding box
+                        x: boundingBox.left,
+                        y: boundingBox.top + boundingBox.height / 2
+                    }, {
+                        // Bottom middle point of bounding box
+                        x: boundingBox.left + boundingBox.width / 2,
+                        y: boundingBox.top + boundingBox.height
+                    }, {
+                        // Right middle point of bounding box
+                        x: boundingBox.left + boundingBox.width,
+                        y: boundingBox.top + boundingBox.height / 2
+                    },
             ];
 
                     link.end = cornerstoneMath.point.findClosestPoint(boundingBoxPoints, link.start);
